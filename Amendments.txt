@@ -1,0 +1,6 @@
+AMENDMENTS:
+
+RPS:
+	- functions (getScore(), shoot(), etc)
+	- push to HTML
+	- 
