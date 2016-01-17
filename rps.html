@@ -2,50 +2,106 @@
 <html>
 	<head>
 	<script type="text/javascript">
-		var playerTurn = prompt("What do you choose? Rock, Paper, or Scissors?").toLowerCase();
-		console.log(playerTurn);
-		if(playerTurn != "paper" && playerTurn != "scissors" && playerTurn != "rock"){
-			alert("Please enter a valid input!");
-			location.reload();
+	var playerTurn;
+	var computerTurn;
+	var playerScore = 0;
+	var computerScore = 0;
+		function shoot(){
+			if(playerTurn == "rock"){
+				if(computerTurn == "paper"){
+					console.log(getWinner("computer", 0, 1));
+					alert(getWinner("computer",0,1));
+				} else if(computerTurn == "scissors"){
+					console.log(getWinner("player", 1, 0));
+					alert(getWinner("player",1,0));
+				} else {
+					console.log(getWinner("tie", 0, 0));
+					alert(getWinner("tie",0,0));
+				}
+			} else if(playerTurn == "paper"){
+				if(computerTurn == "scissors"){
+					console.log(getWinner("computer", 0, 1));
+					alert(getWinner("computer",0,1));
+				} else if(computerTurn == "rock"){
+					console.log(getWinner("player", 1, 0));
+					alert(getWinner("player",1,0));
+				} else {
+					console.log(getWinner("tie", 0, 0));
+					alert(getWinner("tie",0,0));
+				}
+			} else if(playerTurn == "scissors"){
+				if(computerTurn == "rock"){
+					getWinner("computer", 0, 1);
+					alert(getWinner("computer",0,1));
+				} else if(computerTurn == "paper"){
+					getWinner("player", 1, 0);
+					alert(getWinner("player",1,0));
+				} else {
+					getWinner("tie", 0, 0);
+					alert(getWinner("tie", 0, 0));
+				}
+			} 
+			getScore();
+			playAgain();
 		}
-		var computerTurn = Math.floor((3*Math.random()+1));
-		console.log(computerTurn);
-		if(computerTurn == 1){
-			computerTurn = "rock";
-		} else if(computerTurn == 2){
-			computerTurn = "paper";
-		} else if(computerTurn == 3){
-			computerTurn = "scissors";
-		} else {
-			alert("A number other than 1, 2 or 3 has been generated. Press OK to reload game");
-			location.relod();
-		}
-		
-		if(playerTurn == "rock"){
-			if(computerTurn == "paper"){
-				console.log("Computer Wins!");
-			} else if(computerTurn == "scissors"){
-				console.log("Player Wins!");
-			} else {
-				console.log("It is a tie!");
-			}
-		} else if(playerTurn == "paper"){
-			if(computerTurn == "scissors"){
-				console.log("Computer Wins!");
-			} else if(computerTurn == "rock"){
-				console.log("Player Wins!");
-			} else {
-				console.log("It is a tie!");
-			}
-		} else if(playerTurn == "scissors"){
-			if(computerTurn == "rock"){
-				console.log("Computer Wins!");
-			} else if(computerTurn == "paper"){
-				console.log("Player Wins!");
-			} else {
-				console.log("It is a tie!");
+		function playAgain(){
+			var again = prompt("Would you like to play again?(Y/N)").toLowerCase();
+			if(again == "y"){
+				run();
+			} else if(again == "n"){
+				alert("Thanks for playing!");
 			}
 		}
+		function getWinner(winner, player, comp){
+			if(winner == "player"){
+				playerScore += player;
+				console.log("Player wins!");
+				//alert("Player wins!");
+				return "Player wins!";
+			} else if(winner == "computer"){
+				computerScore += comp;
+				console.log("Computer wins!");
+				//alert("Computer wins!");
+				return "Computer wins!";
+			} else if(winner == "tie"){
+				console.log("It is a tie!");
+				//alert("It is a tie!");
+				return "It is a tie!";
+			} else {
+			console.log("something wrong is going on");
+			}
+		}
+		function getScore(){
+			console.log("Player: " + playerScore + " Computer: " + computerScore);
+		}
+		function getPlayer(){
+			var playerTurn = prompt("What do you choose? Rock, Paper, or Scissors?").toLowerCase();
+			console.log(playerTurn);
+			if(playerTurn != "paper" && playerTurn != "scissors" && playerTurn != "rock"){
+				alert("Please enter a valid input!");
+				location.reload();
+			}
+			getComputer();
+		}
+		function getComputer(){
+			var computerTurn = Math.floor((3*Math.random()+1));
+			if(computerTurn == 1){
+				computerTurn = "rock";
+			} else if(computerTurn == 2){
+				computerTurn = "paper";
+			} else if(computerTurn == 3){
+				computerTurn = "scissors";
+			} else {
+				alert("A number other than 1, 2 or 3 has been generated. Press OK to reload game");
+				location.reload();
+			}
+			console.log(computerTurn);
+			shoot();
+		}
+		function run(){
+			getPlayer();
+		}
+		run();
 	</script>
 	</head>
 	<body>
