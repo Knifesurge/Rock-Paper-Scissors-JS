@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script type="text/javascript">
+		var playerTurn = prompt("What do you choose? Rock, Paper, or Scissors?").toLowerCase();
+		console.log(playerTurn);
+		if(playerTurn != "paper" && playerTurn != "scissors" && playerTurn != "rock"){
+			alert("Please enter a valid input!");
+			location.reload();
+		}
+		var computerTurn = Math.floor((3*Math.random()+1));
+		console.log(computerTurn);
+		if(computerTurn == 1){
+			computerTurn = "rock";
+		} else if(computerTurn == 2){
+			computerTurn = "paper";
+		} else if(computerTurn == 3){
+			computerTurn = "scissors";
+		} else {
+			alert("A number other than 1, 2 or 3 has been generated. Press OK to reload game");
+			location.relod();
+		}
+		
+		if(playerTurn == "rock"){
+			if(computerTurn == "paper"){
+				console.log("Computer Wins!");
+			} else if(computerTurn == "scissors"){
+				console.log("Player Wins!");
+			} else {
+				console.log("It is a tie!");
+			}
+		} else if(playerTurn == "paper"){
+			if(computerTurn == "scissors"){
+				console.log("Computer Wins!");
+			} else if(computerTurn == "rock"){
+				console.log("Player Wins!");
+			} else {
+				console.log("It is a tie!");
+			}
+		} else if(playerTurn == "scissors"){
+			if(computerTurn == "rock"){
+				console.log("Computer Wins!");
+			} else if(computerTurn == "paper"){
+				console.log("Player Wins!");
+			} else {
+				console.log("It is a tie!");
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<h3>Rock Paper Scissors</h3>
+		<p>
+			
+		</p>
+	</body>
+</html>
+	
