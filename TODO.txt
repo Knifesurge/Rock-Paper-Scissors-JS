@@ -1,0 +1,5 @@
+- Write the game directly to the webpage
+- Images(?)
+- Animations(?)
+
+More to come!
