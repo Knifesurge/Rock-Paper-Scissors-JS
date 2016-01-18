@@ -1,6 +1,9 @@
 AMENDMENTS:
 
 RPS:
-	- functions (getScore(), shoot(), etc)
+
+DONE	- functions (getScore(), shoot(), etc)
 	- push to HTML
-	- 
+	- Images
+	- Animations
+	- Sound (?)
