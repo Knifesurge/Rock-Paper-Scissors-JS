@@ -2,8 +2,16 @@ AMENDMENTS:
 
 RPS:
 
-DONE	- functions (getScore(), shoot(), etc)
-	- push to HTML
-	- Images
-	- Animations
-	- Sound (?)
+DONE		- functions (getScore(), shoot(), etc)
+Part Done	- push to HTML
+		- Images
+		- Animations
+		- Sound (?)
+		- score keeping beyond a single "play". ie round to round
+
+HTML Improvements:
+
+		- radial buttons for player throw
+		- button to execute a turn
+		- remove current alerts and prompt (with the above complete) for a more smooth game play
+		- general style improvements
