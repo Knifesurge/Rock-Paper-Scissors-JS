@@ -6,22 +6,25 @@
 	</head>
 
 	<body>
-		<div>
+		<div id="prompt"></div>
+		<div id="player">
 			<p>Player's throw: </p>
-			<p id="playersThrowTextBox">...</p>
+			<button id="rock" function="getThrows("r")">Rock</button>
+			<button id="paper function="getThrows("p")">Paper</button>
+			<button id="scissors" function="getThrows("s")">Scissors</button>
 		</div>
-		<div>
+		<div id="computer">
 			<p>Computer's throw: </p>
 			<p id="computersThrowTextBox">...</p>
 		</div>
-		<div>
+		<div id="winner">
 			<p>And the winner is: </p>
 			<p id="outcome">...</p>
 		</div>
-		<div>
+		<div id="gameStatus">
 			<p id="gameStatus">_</p>
 		</div>
-		<script src="rpsGame.js"></script>
+		<script src="changes.js"></script>
 		<script>
 			$(document).ready(function(){
 				run();
